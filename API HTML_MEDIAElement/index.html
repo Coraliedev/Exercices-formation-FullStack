@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API HTML Media Element</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h1>Vidéo Big Buck Bunny</h1>
+    <video id="video">
+      <source src="assets/Big_Buck_Bunny_360_10s_30MB.mp4" type="video/mp4" />
+      <p>
+        Votre navigateur ne prend pas en charge la vidéo Voici
+        <a href="https://test-videos.co.uk/bigbuckbunny/mp4-h264"
+          >un lien pour télécharger la vidéo</a
+        >
+      </p>
+    </video>
+    <div>
+      <button type="button" id="play">
+        <i id="playpause" class="fa-solid fa-play"> </i>
+      </button>
+
+      <button type="button" id="speed">
+        <i id="vitesse" class="fa-solid fa-forward-step"> </i>
+      </button>
+      <input type="range" min="0" max="10" id="range" />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
