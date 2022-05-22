@@ -1,0 +1,33 @@
+* {
+  cursor: url("https://www.patmax.info/curseurs/chat1.cur"), pointer;
+}
+
+#urlImage {
+  width: auto;
+  height: 30vh;
+}
+
+#imageChat {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+button {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+body {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#curseur {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
