@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+div {
+  width: 50vw;
+  height: 40vh;
+}
+
+img {
+  height: 25vh;
+  margin-top: 3vw;
+  margin-bottom: 1vw;
+}
+
+#drag {
+  background-color: cornsilk;
+  margin: 0 auto 3vw auto;
+}
+
+#drop {
+  background-color: coral;
+  margin: auto;
+}
+
+h1 {
+  color: chocolate;
+  margin-bottom: 2vw;
+}
