@@ -38,6 +38,7 @@ button {
   left: 20vw;
 }
 
-#chat,#curseur {
-width: 50vw;
+#chat,
+#curseur {
+  width: 50vw;
 }
