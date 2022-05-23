@@ -19,11 +19,12 @@ function playPauseVideo() {
   }
 }
 
-// réinitialise les boutons lorsque la vidéo est terminée
+// réinitialise les boutons et la vidéo lorsque la vidéo est terminée
 function resetBoutons() {
   icone.className = "fa-solid fa-play";
   iconeVitesse.className = "fa-solid fa-forward-step";
   video.playbackRate = 1;
+  video.load();
 }
 
 //fonction pour changer la vitesse de lecture

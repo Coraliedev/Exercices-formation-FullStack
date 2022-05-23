@@ -16,7 +16,7 @@
   </head>
   <body>
     <h1>Vidéo Big Buck Bunny</h1>
-    <video id="video">
+    <video id="video" poster="assets/img.jpg">
       <source src="assets/Big_Buck_Bunny_360_10s_30MB.mp4" type="video/mp4" />
       <p>
         Votre navigateur ne prend pas en charge la vidéo Voici
@@ -33,7 +33,10 @@
       <button type="button" id="speed">
         <i id="vitesse" class="fa-solid fa-forward-step"> </i>
       </button>
-      <input type="range" min="0" max="10" id="range" />
+      <div>
+        <label for="range"></label>
+        <input type="range" min="0" max="10" id="range" />
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
