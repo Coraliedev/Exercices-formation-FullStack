@@ -31,3 +31,5 @@ function positionCurseur(event) {
 bouton.addEventListener("click", apiChat);
 // écoute mouvement souris
 body.addEventListener("mousemove", positionCurseur);
+// ecoute evenement document pr afficher un chat au chargeemnt de la page
+document.addEventListener('DOMContentLoaded', apiChat)
