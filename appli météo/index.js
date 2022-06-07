@@ -1,3 +1,4 @@
+"use strict";
 // récupère les éléments HTML
 let form = document.getElementById("form");
 let ville = document.getElementById("ville");
@@ -18,12 +19,8 @@ const apiCall = (city) => {
     });
 };
 
-//recupere la ville longitude et latitude
-function recupVille(json) {}
-
 // réponse si le fetch est ok
 function responseOk(response) {
-  //console.log(response.json());
   return response.json();
 }
 //réponse si erreur lors du fetch
@@ -87,6 +84,6 @@ function reset(){
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   reset();
-  city = event.target.ville.value;
+  let city = event.target.ville.value;
   apiCall(city);
 });
