@@ -11,7 +11,6 @@ const pictures = ["ciseau", "feuille", "pierre"];
 //creer une div qui contiendra les images pour le choix du joueur
 let divPicturesPlayer = document.createElement("div");
 divPicturesPlayer.setAttribute("id", "divPlayer");
-
 for (let i of pictures) {
   let image = document.createElement("img");
   image.setAttribute("src", `/pierre feuille ciseaux/img/${i}.png`);
@@ -21,6 +20,7 @@ for (let i of pictures) {
 }
 body.appendChild(divPicturesPlayer);
 
+//récupère les images crées pour pouvoir y ajouter les événements au clic
 const imagePierre = document.querySelector("#pierre");
 const imageCiseau = document.querySelector("#ciseau");
 const imageFeuille = document.querySelector("#feuille");
@@ -49,7 +49,6 @@ let countPlayer = 0;
 let countComputer = 0;
 
 //creation div compteurs
-
 let divCompteur = document.createElement("div");
 divCompteur.setAttribute("id", "divCompteurs");
 let paraCompteurJoueur = document.createElement("p");
@@ -60,7 +59,7 @@ paraCompteurComputer.innerHTML = `Ordinateur: 0`;
 divCompteur.appendChild(paraCompteurComputer);
 body.appendChild(divCompteur);
 
-
+//function qui reset les compteurs et remet les images 
 function resetPartie() {
     divComputer.innerHTML = `<img src="/pierre feuille ciseaux/img/point.png" alt="point interrogation">`;
     divPlayer.innerHTML = `<img src="/pierre feuille ciseaux/img/point.png" alt="point interrogation">`;
@@ -70,8 +69,11 @@ function resetPartie() {
     paraCompteurJoueur.innerHTML = `Joueur: ${countPlayer}`;
     body.removeChild(body.lastChild);
     body.removeChild(body.lastChild);
+    divPicturesPlayer.style.display="flex";
+
   }
 
+//function qui donne les conditions de victoires
 function shifumi(indexOfArray) {
   divPlayer.innerHTML = `<img src="/pierre feuille ciseaux/img/${indexOfArray}.png" alt="image ${indexOfArray}">`;
   let random = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
@@ -90,34 +92,31 @@ function shifumi(indexOfArray) {
     paraCompteurComputer.innerHTML = `Ordinateur: ${countComputer}`;
   }
 
+  if (countComputer===2 || countPlayer===2){
   let gagne =document.createElement("div");
   gagne.setAttribute("id","gagnant");
-
   if (countPlayer === 2) {
     gagne.innerHTML="Joueur gagne";
-    body.appendChild(gagne)
-    let bouton=document.createElement("button");
-    bouton.textContent="Nouvelle partie";
-    body.appendChild(bouton);
-    bouton.addEventListener('click',() => {resetPartie()})
-   
   } else if (countComputer === 2) {
-    gagne.innerHTML="Ordinateur gagne";
-    body.appendChild(gagne)
-    let bouton=document.createElement("button");
+    gagne.innerHTML="Ordinateur gagne"; 
+  }
+  body.appendChild(gagne)
+  let bouton=document.createElement("button");
     bouton.textContent="Nouvelle partie";
     body.appendChild(bouton);
+    divPicturesPlayer.style.display="none"
     bouton.addEventListener('click',() => {resetPartie()})
-  }
+}  
 }
 
-
-imageCiseau.addEventListener("click", () => {
-  shifumi(pictures[0]);
-});
-imageFeuille.addEventListener("click", () => {
-  shifumi(pictures[1]);
-});
-imagePierre.addEventListener("click", () => {
-  shifumi(pictures[2]);
-});
+// événements au clic sur les images
+  imageCiseau.addEventListener("click", () => {
+    shifumi(pictures[0]);}
+  );
+  imageFeuille.addEventListener("click", () => {
+    shifumi(pictures[1]);}
+  );
+  imagePierre.addEventListener("click", () => {
+    shifumi(pictures[2]);}
+  );
+  
