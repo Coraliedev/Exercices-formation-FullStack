@@ -1,17 +1,30 @@
 div {
     width: 15vw;
-    height: 20vw;
-    background-color: cornflowerblue;
+    height:9vw;
+    background-color:black;
     margin-bottom: 1vw;
     margin-right: 1vw ;
 }
 
 body{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
-p{
+img{
+    width:15vw;
+    height:9vw;
+    object-fit:cover;
     display: none;
 }
+
+#winDiv{
+    position:relative;
+    background-color: white;
+   left:40vw;
+   text-align: center;
+   margin-top: 3vw;
+}
+
+
