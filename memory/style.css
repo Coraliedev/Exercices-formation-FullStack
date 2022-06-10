@@ -1,0 +1,17 @@
+div {
+    width: 15vw;
+    height: 20vw;
+    background-color: cornflowerblue;
+    margin-bottom: 1vw;
+    margin-right: 1vw ;
+}
+
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p{
+    display: none;
+}
