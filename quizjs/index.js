@@ -132,10 +132,17 @@ function removeQuestion(e) {
         createQuestion(next);
       }
     }
-  } else {
-    next = 0;
-    document.getElementById("divQCM").remove();
-    finalQCM();
+  } else if (next == QCM.length) {
+    let radios = document.getElementsByName(next - 1);
+    for (const element of radios) {
+      if (element.checked) {
+        document.getElementById("divQCM").remove();
+        let value = element.id;
+        QCM[next - 1].userAnswer = value;
+        next = 0;
+        finalQCM();
+      }
+    }
   }
 }
 
